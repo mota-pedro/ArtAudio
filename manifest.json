@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "ArtAudio",
+    "description": "Extensão que converte artigos no formato PDF para áudio, com o objetivo de auxiliar pessoas com deficiência visual no meio acadêmico.",
+    "version": "1.0",
+    "action": {
+      "default_popup": "artaudio.html",
+      "default_icon": "assets/logo-artaudio.png"
+    }
+  }
