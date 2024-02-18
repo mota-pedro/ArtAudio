@@ -5,7 +5,9 @@
     "version": "1.0",
     "permissions": [
       "activeTab",
-      "tts"
+      "tts",
+      "scripting",
+      "storage"
     ],
     "action": {
       "default_popup": "index.html",
