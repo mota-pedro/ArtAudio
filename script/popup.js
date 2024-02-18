@@ -1,14 +1,12 @@
-const textInput = document.getElementById('text-input');
-const copyButton = document.getElementById('copy-button');
 const readButton = document.getElementById('read-button');
 
-copyButton.addEventListener('click', () => {
+readButton.addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const tab = tabs[0];
 
         function copyText() {
             const pageText = document.body.innerText;
-            chrome.storage.local.set({ 'pageText': pageText});
+            chrome.runtime.sendMessage(pageText);
             console.log(pageText);
         };
 
@@ -18,8 +16,8 @@ copyButton.addEventListener('click', () => {
         });
     });
 
-    chrome.storage.local.get('pageText', (data) => {
-        const content = data.pageText;
+    chrome.runtime.onMessage.addListener((data) => {
+        const content = data;
         chrome.tts.speak(content);
-    })
+    });
 });

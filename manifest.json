@@ -6,11 +6,10 @@
     "permissions": [
       "activeTab",
       "tts",
-      "scripting",
-      "storage"
+      "scripting"
     ],
     "action": {
-      "default_popup": "index.html",
+      "default_popup": "popup.html",
       "default_icon": "assets/logo-artaudio.png"
     }
   }
