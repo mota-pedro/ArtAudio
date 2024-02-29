@@ -1,0 +1,37 @@
+body {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    background: #FFFAFA;
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90.58deg, #5271FF 24.56%, #0B23F5 87.81%);
+}
+
+.title {
+    color: #FFFAFA;
+}
+
+.logo-image {
+    margin-top: 19px;
+    height: 100%;
+    width: 30px;
+}
+
+.content-box {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;}
+
+.read-button {
+    border: none;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.read-button-text {
+    font-size: 14px;
+}

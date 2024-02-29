@@ -1,5 +1,7 @@
 const readButton = document.getElementById('read-button');
 
+let isAllowed = chrome.extension.isAllowedFileSchemeAccess();
+
 readButton.addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const tab = tabs[0];
