@@ -23,6 +23,18 @@
           "default": "Alt + P"
         },
         "description": "Play or pause speech."
+      },
+      "increase-speed": {
+        "suggested_key": {
+          "default": "Alt + Up"
+        },
+        "description": "Increases speech speed."
+      },
+      "decrease-speed": {
+        "suggested_key": {
+          "default": "Alt + Down"
+        },
+        "description": "Decreases speech speed."
       }
     }
   }

@@ -1,10 +1,15 @@
 var speaking = false;
+var speed = 1.0;
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command === 'play-pause' && speaking === false) {
         speakContent();
     } else if (command === 'play-pause' && speaking === true) {
         stopSpeaking();
+    } else if (command === 'increase-speed') {
+        increaseSpeed();
+    } else if (command === 'decrease-speed') {
+        decreaseSpeed();
     } else {
         console.log(`Command ${command} not found`);
     }
@@ -31,7 +36,7 @@ function speakContent() {
 
     chrome.runtime.onMessage.addListener((data) => {
         const content = data;
-        chrome.tts.speak(content);
+        chrome.tts.speak(content, {'rate': speed});
     });
 
 };
@@ -40,6 +45,25 @@ function stopSpeaking() {
 
     speaking = false;
     chrome.tts.stop();
+
+}
+
+function increaseSpeed() {
+
+    if (speed < 2.0) {
+        speed++;
+    }
+    speakContent();
+}
+
+function decreaseSpeed() {
+
+    if (speed === 1.0) {
+        speed= 0.5;
+    } else {
+        speed--;
+    }
+    speakContent();
 
 }
 
