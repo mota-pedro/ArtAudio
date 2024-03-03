@@ -11,5 +11,18 @@
     "action": {
       "default_popup": "popup.html",
       "default_icon": "assets/logo-artaudio.png"
+    },
+    "commands": {
+      "_execute_action": {
+        "suggested_key": {
+            "default": "Alt + A"
+        }
+      },
+      "play-pause": {
+        "suggested_key": {
+          "default": "Alt + P"
+        },
+        "description": "Play or pause speech."
+      }
     }
   }

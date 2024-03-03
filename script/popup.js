@@ -1,8 +1,14 @@
-const readButton = document.getElementById('read-button');
+chrome.commands.onCommand.addListener(function (command) {
+    switch (command) {
+        case 'play-pause':
+            speakContent();
+            break;
+        default:
+            console.log(`Command ${command} not found`);
+    }
+});
 
-let isAllowed = chrome.extension.isAllowedFileSchemeAccess();
-
-readButton.addEventListener('click', () => {
+function speakContent() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const tab = tabs[0];
 
@@ -22,4 +28,5 @@ readButton.addEventListener('click', () => {
         const content = data;
         chrome.tts.speak(content);
     });
-});
+};
+
