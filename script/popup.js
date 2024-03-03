@@ -1,14 +1,19 @@
+var speaking = false;
+
 chrome.commands.onCommand.addListener(function (command) {
-    switch (command) {
-        case 'play-pause':
-            speakContent();
-            break;
-        default:
-            console.log(`Command ${command} not found`);
+    if (command === 'play-pause' && speaking === false) {
+        speakContent();
+    } else if (command === 'play-pause' && speaking === true) {
+        stopSpeaking();
+    } else {
+        console.log(`Command ${command} not found`);
     }
 });
 
 function speakContent() {
+
+    speaking = true;
+
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const tab = tabs[0];
 
@@ -28,5 +33,13 @@ function speakContent() {
         const content = data;
         chrome.tts.speak(content);
     });
+
 };
+
+function stopSpeaking() {
+
+    speaking = false;
+    chrome.tts.stop();
+
+}
 
