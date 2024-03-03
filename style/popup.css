@@ -22,16 +22,22 @@ body {
 }
 
 .content-box {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-evenly;}
+    margin-top: 15px;
+}
 
-.read-button {
+.command-box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    margin-top: 12px;
     border: none;
     border-radius: 10px;
+    height: 25px;
     background-color: #D9D9D9;
 }
 
-.read-button-text {
+p {
     font-size: 14px;
 }
