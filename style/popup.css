@@ -1,13 +1,16 @@
 body {
     position: relative;
     width: 250px;
-    height: 150px;
+    height: auto;
     background: #FFFAFA;
 }
 
 .title-box {
     display: flex;
     justify-content: center;
+    margin-top: -10px;
+    margin-right: -10px;
+    margin-left: -10px;
     background: linear-gradient(90.58deg, #5271FF 24.56%, #0B23F5 87.81%);
 }
 
@@ -23,11 +26,17 @@ body {
 
 .content-box {
     margin-top: 15px;
+    display:grid;
+    grid-template-columns: auto;
 }
 
 .command-box {
-    display: flex;
-    justify-content: space-evenly;
+    display:grid;
+    grid-template-columns: repeat(2, max-content);
+    width:100%;
+    justify-content:space-between;
+    grid-row-gap: 32px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 button {
@@ -40,4 +49,16 @@ button {
 
 p {
     font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.github-icon {
+    height: 100%;
+    width: 25px;
 }
