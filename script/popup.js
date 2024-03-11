@@ -1,6 +1,10 @@
 var speaking = false;
 var speed = 1.0;
 
+chrome.tts.speak(
+    "Comandos: Alt + Á: Abrir ou fechar extensão; Alt + P: Ler página ou pausar leitura; Alt + Seta para cima: Aumentar velocidade; Alt + Seta para baixo: Diminuir Velocidade"
+    )
+
 chrome.commands.onCommand.addListener(function (command) {
     if (command === 'play-pause' && speaking === false) {
         speakContent();
